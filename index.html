@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPIT-405 Lab 7 | Unsplash Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Unsplash Image Search</h1>
+    <p>CPIT-405 Lab 7 &mdash; Ajax with XHR, Fetch (Promises), and Fetch (Async/Await)</p>
+  </header>
+
+  <main>
+    <form id="search-form" autocomplete="off">
+      <div class="row">
+        <input id="api-key" type="password" placeholder="Unsplash Access Key" aria-label="Unsplash Access Key" required>
+        <button type="button" id="toggle-key" title="Show/Hide key">👁</button>
+      </div>
+
+      <div class="row">
+        <input id="query" type="search" placeholder="Search photos (e.g. mountains) and press Enter" aria-label="Search query" required>
+        <button type="submit">Search</button>
+      </div>
+
+      <fieldset class="methods">
+        <legend>Ajax method</legend>
+        <label><input type="radio" name="method" value="xhr" checked> XMLHttpRequest</label>
+        <label><input type="radio" name="method" value="promise"> Fetch + Promises</label>
+        <label><input type="radio" name="method" value="async"> Fetch + Async/Await</label>
+      </fieldset>
+    </form>
+
+    <p id="status" role="status"></p>
+    <section id="results" class="grid"></section>
+
+    <nav id="pager" hidden>
+      <button id="prev" type="button">&laquo; Prev</button>
+      <span id="page-info"></span>
+      <button id="next" type="button">Next &raquo;</button>
+    </nav>
+  </main>
+
+  <div id="lightbox" hidden>
+    <img id="lightbox-img" alt="">
+    <p id="lightbox-caption"></p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
